@@ -11,7 +11,9 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   // sign user in function
-  void signUserIn() {}
+  void signUserIn() async {
+    
+  }
 
   @override
   Widget build(BuildContext context) {
