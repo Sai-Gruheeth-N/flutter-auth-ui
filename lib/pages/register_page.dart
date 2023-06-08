@@ -45,7 +45,9 @@ class _RegisterPageState extends State<RegisterPage> {
       );
 
       // pop the circular loading indicator on navigation to home page
-      Navigator.of(context).pop();
+      if (context.mounted) {
+        Navigator.of(context).pop();
+      }
     } on FirebaseAuthException catch (e) {
       // show error message
       showErrorMessage(e.code);
