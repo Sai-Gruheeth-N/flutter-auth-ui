@@ -30,25 +30,22 @@ class _RegisterPageState extends State<RegisterPage> {
       },
     );
 
+    // check if the password is confirmed
+    if (passwordController.text != confirmPasswordController.text) {
+      showErrorMessage('Passwords don\'t match!');
+      return;
+    }
+
     // try sign in
     try {
-      // check if the password is confirmed
-      if (passwordController.text == confirmPasswordController.text) {
-        await FirebaseAuth.instance.createUserWithEmailAndPassword(
-          email: emailController.text,
-          password: passwordController.text,
-        );
-      } else {
-        // show error message, passwords don't match
-        showErrorMessage('Passwords don\'t match!');
-      }
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
 
-      // pop the circular loading indicator
+      // pop the circular loading indicator on navigation to home page
       Navigator.of(context).pop();
     } on FirebaseAuthException catch (e) {
-      // pop the circular loading indicator
-      Navigator.of(context).pop();
-
       // show error message
       showErrorMessage(e.code);
     }
@@ -56,6 +53,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
   // eeror message to user
   void showErrorMessage(String message) {
+    // pop the circular loading indicator to show error message
+    Navigator.of(context).pop();
     showDialog(
       context: context,
       builder: (context) {
@@ -123,24 +122,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: confirmPasswordController,
                   hintText: 'Confirm Password',
                   obscureText: true,
-                ),
-                const SizedBox(height: 10),
-
-                // forgot password?
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        'Forgot password?',
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
                 const SizedBox(height: 25),
 
