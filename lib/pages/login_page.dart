@@ -79,11 +79,11 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 50),
+                const SizedBox(height: 25),
                 // logo
                 const Icon(
                   Icons.lock,
-                  size: 100,
+                  size: 90,
                 ),
                 const SizedBox(height: 50),
 
