@@ -40,35 +40,25 @@ class _LoginPageState extends State<LoginPage> {
     } on FirebaseAuthException catch (e) {
       Navigator.of(context).pop();
 
-      // Wrong email
-      if (e.code == 'user-not-found') {
-        wrongEmailMessage();
-      }
-
-      // Wrong password
-      else if (e.code == 'wrong-password') {
-        wrongPasswordMessage();
-      }
+      // show error message
+      showErrorMessage(e.code);
     }
   }
 
-  void wrongEmailMessage() {
+  // eeror message to user
+  void showErrorMessage(String message) {
     showDialog(
       context: context,
       builder: (context) {
-        return const AlertDialog(
-          title: Text('Incorrect Email'),
-        );
-      },
-    );
-  }
-
-  void wrongPasswordMessage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          title: Text('Incorrect Password'),
+        return AlertDialog(
+          title: Center(
+            child: Text(
+              message,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ),
         );
       },
     );
@@ -79,8 +69,8 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Center(
+        child: Center(
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
