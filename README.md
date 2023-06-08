@@ -1,16 +1,9 @@
-# auth_ui
+## Auth_UI
 
-A new Flutter project.
+This is a Auth UI project using Flutter and Firebase. Developed this to get a good understanding on how to integrate Flutter and Firebase for email/password and Google sign in.
 
-## Getting Started
+# Login Screen
+<br><img src="https://github.com/Sai-Gruheeth-N/flutter-auth-ui/assets/83129176/3421d1a3-2a09-4f5b-83e8-53ffb8186f88" height="500">
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Register Screen
+<br><img src="https://github.com/Sai-Gruheeth-N/flutter-auth-ui/assets/83129176/50936d08-66fa-4985-a842-da9620823fcb" height="500">
