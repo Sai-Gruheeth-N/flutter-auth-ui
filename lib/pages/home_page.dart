@@ -1,3 +1,4 @@
+import 'package:auth_ui/services/auth_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,7 @@ class HomePage extends StatelessWidget {
 
   // sign user out method
   void signUserOut() {
+    AuthService().signOutWithGoogle();
     FirebaseAuth.instance.signOut();
   }
 
