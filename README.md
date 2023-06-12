@@ -7,3 +7,6 @@ This is a Auth UI project using Flutter and Firebase. Developed this to get a go
 
 # Register Screen
 <br><img src="https://github.com/Sai-Gruheeth-N/flutter-auth-ui/assets/83129176/50936d08-66fa-4985-a842-da9620823fcb" height="500">
+
+# Google Sign In
+<br><img src="https://github.com/Sai-Gruheeth-N/flutter-auth-ui/assets/83129176/ddb9a7a5-d045-40c9-b17d-468853474c25" height="500">
